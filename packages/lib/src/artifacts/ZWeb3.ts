@@ -84,11 +84,11 @@ export default class ZWeb3 {
   }
 
   public static async hasBytecode(address) {
-    const bytecode = await ZWeb3.getCode(address)
+    const bytecode = await ZWeb3.getCode(address);
     return bytecode.length > 2;
   }
 
-  public static async getStorageAt(address: string, position: number): Promise<string> {
+  public static async getStorageAt(address: string, position: string): Promise<string> {
     return promisify(
       ZWeb3.eth().getStorageAt.bind(ZWeb3.eth())
     )(address, position);
