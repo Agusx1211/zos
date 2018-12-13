@@ -169,7 +169,7 @@ async function getNodeVersion(): Promise<string> {
 }
 
 async function getETHGasStationPrice(): Promise<any> | never {
-  if (state.gasPrice) { return state.gasPrice; }
+  if (state.gasPrice) return state.gasPrice;
 
   try {
     const { data: responseData } = await axios.get(GAS_API_URL);
